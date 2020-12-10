@@ -10,14 +10,22 @@
 
 	<body>
 		<div class ="gallery">
-		    <script type="text/javascript">
-		        function viewImage(id) {
-		            document.getElementById(id).innerHTML="<img src='images/sonic.png'> <img src='images/mario.png'> <img src='images/amphi.png'> <img src='images/pika.png'> <img src='images/falco.png'>";
-		        }
-		    </script>
 
-		    <div class="buttonImage" id="bouton" onclick="javascript:viewImage('image');"> Révéler l'image</div>
-		    <div id="image"></div>
+			<script type="text/javascript">
+	            var afficher=false; //permet de savoir si l'image est affichée ou non
+	             
+	            function viewImage(id) {
+	                var contenuImage=!afficher ? "<img src='images/sonic.png'> <img src='images/mario.png'> <img src='images/captain.png'> <img src='images/pika.png'> <img src='images/falco.png'>" : ""; //en fonction de afficher on met l'image ou non
+	                afficher=!afficher;
+	                var contenuBouton=afficher ? "Cacher les icones" : "Afficher les icones" ; 
+	                 
+	                document.getElementById(id).innerHTML=contenuImage;
+	                document.getElementById("bouton").innerHTML=contenuBouton;
+	            }
+        	</script>
+ 
+       		<div id="bouton" onclick="javascript:viewImage('image');"> Afficher l'image  </div>
+        	<div id="image"></div>
 
 		</div>
          
