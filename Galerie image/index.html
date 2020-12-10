@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html class="html">
 
 	<head>
-		<title>Chatai Gallery</title>
-		<h1 class="titre">Bienvenue dans ma gallerie !</h1>
+		<div class="header">
+			<title>Chatai Gallery</title>
+			<h1 class="titre">Bienvenue dans ma gallerie !</h1>
+		</div>
 		<meta charset="utf-8"/>
         <link rel="stylesheet" href="index.css"/>
 	</head>
 
-	<body>
+	<body class="body">
 		<div class ="gallery">
 
 			<script type="text/javascript">
-	            var afficher=false; //permet de savoir si l'image est affichée ou non
-	             
+	            var afficher=false; 
 	            function viewImage(id) {
-	                var contenuImage=!afficher ? "<img src='images/sonic.png'> <img src='images/mario.png'> <img src='images/captain.png'> <img src='images/pika.png'> <img src='images/falco.png'>" : ""; //en fonction de afficher on met l'image ou non
+	                var contenuImage=!afficher ? 
+	                "<img src='images/sonic.png'><h4>SONIC</h4></img> <img src='images/mario.png'><h4>SONIC</h4></img> <img src='images/captain.png'><h4>SONIC</h4></img> <img src='images/pika.png'><h4>SONIC</h4></img> <img src='images/falco.png'><h4>SONIC</h4></img>" : "";
 	                afficher=!afficher;
-	                var contenuBouton=afficher ? "Cacher les icones" : "Afficher les icones" ; 
+	                var contenuBouton=afficher ? "<h2>Cacher les icones</h2>" : "<h2>Afficher les icones</h2>" ; 
 	                 
 	                document.getElementById(id).innerHTML=contenuImage;
 	                document.getElementById("bouton").innerHTML=contenuBouton;
 	            }
         	</script>
  
-       		<div id="bouton" onclick="javascript:viewImage('image');"> Afficher l'image  </div>
-        	<div id="image"></div>
+       		<div class="iconButton" id="bouton" onclick="javascript:viewImage('image');"> <h2>Afficher l'image</h2>  </div>
+        	<div class="icon" id="image"></div>
 
 		</div>
          

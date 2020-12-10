@@ -1,22 +1,36 @@
+.html{
+	background-color: #5074CB
+}
+
+.header{
+	border: solid;
+	background-color: white;
+}
+
 .titre {
 	text-align: center;
-	color: white;
-	background-color: blue;
+	color: black;
 }
 
 .gallery {
+	margin: 20px;
 	text-align: center;
 	align-content: center;
 	border: solid;
+	background-color: #EAEDF3;
 }
 
-.buttonImage{
-	background-color: black;
-	color: white;
+.iconButton{
+	border: solid;
+}
+
+.icon{
+	
 }
 
 .footer {
 	background-color: black;
 	color : white;
 	text-align: center;
+	bottom: 0; left: 0; right: 0
 }
