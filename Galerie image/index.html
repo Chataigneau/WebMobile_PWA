@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Chatai Gallery</title>
+		<h1 class="titre">Bienvenue dans ma gallerie !</h1>
+		<meta charset="utf-8"/>
+        <link rel="stylesheet" href="index.css"/>
+	</head>
+
+	<body>
+		<div class ="gallery">
+		    <script type="text/javascript">
+		        function viewImage(id) {
+		            document.getElementById(id).innerHTML="<img src='images/sonic.png'> <img src='images/mario.png'> <img src='images/amphi.png'> <img src='images/pika.png'> <img src='images/falco.png'>";
+		        }
+		    </script>
+
+		    <div class="buttonImage" id="bouton" onclick="javascript:viewImage('image');"> Révéler l'image</div>
+		    <div id="image"></div>
+
+		</div>
+         
+    </body>
+
+
+	<footer class="footer">
+        <div>
+            <p>Email : nicolas.chataigneau@ynov.com</p>
+            <p>Téléphone : 06 45 61 39 23</p>
+        </div>
+    </footer>
+	
+</html>

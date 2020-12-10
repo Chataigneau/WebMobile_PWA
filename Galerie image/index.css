@@ -1,0 +1,22 @@
+.titre {
+	text-align: center;
+	color: white;
+	background-color: blue;
+}
+
+.gallery {
+	text-align: center;
+	align-content: center;
+	border: solid;
+}
+
+.buttonImage{
+	background-color: black;
+	color: white;
+}
+
+.footer {
+	background-color: black;
+	color : white;
+	text-align: center;
+}
