@@ -15,7 +15,6 @@
 .gallery {
 	margin: 20px;
 	text-align: center;
-	align-content: center;
 	border: solid;
 	background-color: #EAEDF3;
 }
@@ -25,7 +24,13 @@
 }
 
 .icon{
-	
+	align-items: center;
+	display: inline-flex;
+}
+
+.characterName{
+	font-size: 20px;
+	font-weight: bold;
 }
 
 .footer {

@@ -17,7 +17,7 @@
 	            var afficher=false; 
 	            function viewImage(id) {
 	                var contenuImage=!afficher ? 
-	                "<img src='images/sonic.png'><h4>SONIC</h4></img> <img src='images/mario.png'><h4>SONIC</h4></img> <img src='images/captain.png'><h4>SONIC</h4></img> <img src='images/pika.png'><h4>SONIC</h4></img> <img src='images/falco.png'><h4>SONIC</h4></img>" : "";
+	                "<table><tbody><tr><td><img src='images/sonic.png' alt='sonic'></td><td><img src='images/mario.png' alt='mario'></td><td><img src='images/captain.png' alt='captain'></td><td><img src='images/pika.png' alt='pikachu'></td><td><img src='images/falco.png' alt='falco'></td></tr><tr><td><p class='characterName'/>SONIC</p></td><td><p class='characterName'/>MARIO</p></td><td><p class='characterName'/>CAPTAIN FALCON</p></td><td><p class='characterName'/>PIKACHU</p></td><td><p class='characterName'/>FALCO</p></td></tr></tbody></table>" : "<img src='images/ball.png' alt='ball'> ";
 	                afficher=!afficher;
 	                var contenuBouton=afficher ? "<h2>Cacher les icones</h2>" : "<h2>Afficher les icones</h2>" ; 
 	                 
@@ -27,10 +27,12 @@
         	</script>
  
        		<div class="iconButton" id="bouton" onclick="javascript:viewImage('image');"> <h2>Afficher l'image</h2>  </div>
-        	<div class="icon" id="image"></div>
+        	<div class="icon" id="image">
+        		<img src='images/ball.png' alt='ball'>
+        	</div>
 
 		</div>
-         
+
     </body>
 
 
