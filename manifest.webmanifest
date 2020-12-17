@@ -1,13 +1,24 @@
-{ "name": "Galerie PWA",
- "icons": [
- {
- "src": "images/icons/ball-72.png",
- "sizes": "72x72",
- "type": "image/png"
- },
- {
- "src": "images/icons/ball-512.png",
- "sizes": "512x512",
- "type": "image/png"
- }]
+{ 
+	"name": "Galerie PWA",
+	"display": "fullscreen",
+ 	"icons": 
+ 	[
+	{
+		 "src": "images/ball-72.png",
+		 "sizes": "72x72",
+		 "type": "image/png"
+	},
+
+	{
+		 "src": "images/ball-144.png",
+		 "sizes": "144x144",
+		 "type": "image/png"
+	},
+
+	{
+		 "src": "images/ball-512.png",
+		 "sizes": "512x512",
+		 "type": "image/png"
+	}
+	]
 }

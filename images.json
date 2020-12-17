@@ -1,31 +1,31 @@
-"images" : [
+[
 	{
 	 "name": "Sonic",
 	 "description": "Icone de Sonic",
-	 "src" : ""
+	 "src" : "images/sonic.png"
 	 },
 
 	 {
 	 "name": "Mario",
 	 "description": "Icone de Mario",
-	"src" : ""
+	"src" : "images/mario.png"
 	 },
 
 	 {
 	 "name": "Captain Falcon",
 	 "description": "Icone de Captain Falcon",
-	"src" : ""
+	"src" : "images/captain.png"
 	 },
 
 	 {
 	 "name": "Pikachu",
 	 "description": "Icone de Pikachu",
-	"src" : ""
+	"src" : "images/pika.png"
 	 },
 
 	 {
 	 "name": "Falco",
 	 "description": "Icone de Falco",
-	 "src" : ""
-	 },
+	 "src" : "images/falco.png"
+	 }
 ]
