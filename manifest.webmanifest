@@ -1,6 +1,8 @@
 { 
 	"name": "Galerie PWA",
+	"background-color": "#5074CB",
 	"display": "fullscreen",
+	"orientation": "portrait",
  	"icons": 
  	[
 	{
@@ -19,6 +21,6 @@
 		 "src": "images/ball-512.png",
 		 "sizes": "512x512",
 		 "type": "image/png"
-	}
+	},
 	]
 }
