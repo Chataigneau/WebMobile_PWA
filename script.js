@@ -1,20 +1,21 @@
 var afficher=false; 
 var html = `
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <table>
   <tbody>
     <tr>
-      <td><img src='images/sonic.png' alt='sonic'></td>
-      <td><img src='images/mario.png' alt='mario'></td>
-      <td><img src='images/captain.png' alt='captain'></td>
-      <td><img src='images/pika.png' alt='pikachu'></td>
-      <td><img src='images/falco.png' alt='falco'></td>
+      <td><img src='images/sonic.png' alt='sonic' style="max-width:100%;height:auto;"></td>
+      <td><img src='images/mario.png' alt='mario' style="max-width:100%;height:auto;"></td>
+      <td><img src='images/captain.png' alt='captain' style="max-width:100%;height:auto;"></td>
+      <td><img src='images/pika.png' alt='pikachu' style="max-width:100%;height:auto;"></td>
+      <td><img src='images/falco.png' alt='falco' style="max-width:100%;height:auto;"></td>
     </tr>
     <tr>
-      <td><p class='characterName'/>SONIC</p></td>
-      <td><p class='characterName'/>MARIO</p></td>
-      <td><p class='characterName'/>CAPTAIN FALCON</p></td>
-      <td><p class='characterName'/>PIKACHU</p></td>
-      <td><p class='characterName'/>FALCO</p></td>
+      <td><p class='characterName' style="font-size:2vw;"/>SONIC</p></td>
+      <td><p class='characterName' style="font-size:2vw;"/>MARIO</p></td>
+      <td><p class='characterName' style="font-size:2vw;"/>CAPTAIN FALCON</p></td>
+      <td><p class='characterName' style="font-size:2vw;"/>PIKACHU</p></td>
+      <td><p class='characterName' style="font-size:2vw;"/>FALCO</p></td>
     </tr>
   </tbody>
 </table>`;
