@@ -58,6 +58,7 @@
       }
     ],
     "splash_pages": null,
-    "lang": "fr",
+	"lang": "fr",
+	"webpack-pwa-manifest": "^4.2.0",
     "description": "Galerie PWA Projet"
   }
