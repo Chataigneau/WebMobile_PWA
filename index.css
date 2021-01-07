@@ -69,6 +69,6 @@
 	white-space: nowrap;
   }
 
-.card{
+.column{
 	flex-direction: row;
 }
