@@ -61,7 +61,7 @@ function afficher(json){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  fetch("https:/nicolaswebmobilepwa.netlify.app/images.json")
+  fetch("https://nicolaswebmobilepwa.netlify.app/images.json")
     .then((response) => response.json())
     .then((json) => afficher(json));  
 });
