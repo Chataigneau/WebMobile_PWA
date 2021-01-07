@@ -23,7 +23,7 @@ function afficher(json){
                 <figure class="image is-4by3">
                   <img
                     src="${repo.url}"
-                    alt="Placeholder image"
+                    alt="${repo.description}"
                   />
                 </figure>
               </div>
@@ -32,10 +32,6 @@ function afficher(json){
                   <div class="media-content">
                     <p class="title is-4">${repo.name}</p>
                   </div>
-                </div>
-  
-                <div class="content">
-                   ${repo.description}
                 </div>
               </div>
             </div>
