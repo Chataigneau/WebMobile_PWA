@@ -1,24 +1,6 @@
-/*const sonicJson = {"name" : "Sonic" , "description" : "Icone de Sonic", "src" : "images/sonic.png"};
-var sonicObject = JSON.parse(sonicJson);
-document.getElementById("src").innerHTML = sonicObject.src;
+var afficher=false;
 
-const MarioJson = {"name" : "Mario" , "description" : "Icone de Mario", "src" : "images/mario.png"};
-var marioObject = JSON.parse(JSON.stringify(marioJson));
-document.getElementById("src").innerHTML = marioObject.src;
-
-const CaptainJson = {"name" : "Captain Falcon" , "description" : "Icone de Captain Falcon", "src" : "images/captain.png"};
-var captainObject = JSON.parse(captainJson);
-document.getElementById("src").innerHTML = captainObject.src;
-
-const PikachuJson = {"name" : "Pikachu" , "description" : "Icone de Pikachu", "src" : "images/pika.png"};
-var pikachuObject = JSON.parse(pikachuJson);
-document.getElementById("src").innerHTML = pikachuObject.src;
-
-const FalcoJson = {"name" : "Falco" , "description" : "Icone de Falco", "src" : "images/falco.png"};
-var falcoObject = JSON.parse(falcoJson);
-document.getElementById("src").innerHTML = falcoObject.src;*/
-
-var afficher=false; 
+/*
 var html = `
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <table>
@@ -38,9 +20,10 @@ var html = `
       <td><p class='characterName' style="font-size:2vw;"/>FALCO</p></td>
     </tr>
   </tbody>
-</table>`;
+</table>`;*/
 
 function viewImage(id) {
+
     var contenuImage=!afficher ? 
     html : "<img src='images/ball.png' alt='ball' clas='photo'> ";
     afficher=!afficher;
@@ -73,3 +56,54 @@ window.addEventListener('beforeinstallprompt', e => {
 window.addEventListener('appinstalled', e => { 
    console.log('application installée') ; 
 }) ;
+
+function reduireArray(array, size) {
+  if (array.length <= size) {
+    return [array];
+  }
+  return [array.slice(0, size), ...reduireArray(array.slice(size), size)];
+}
+
+const dateTimeFormat = Intl.DateTimeFormat("fr");
+
+function afficher(json){
+	const selections = reduireArray(json, 4);
+
+  let html = "";
+
+  selections.forEach(selection => {
+    html += '<div class="columns">';
+
+    selection.forEach(repo => {
+      html += `
+            <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img
+                    src="${repo.url}"
+                    alt="Placeholder image"
+                  />
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4">${repo.name}</p>
+                  </div>
+                </div>
+  
+                <div class="content">
+                   ${repo.description}
+                  <br />
+                </div>
+              </div>
+            </div>
+          </div>`;
+    });
+    html += "</div>";
+  });
+
+  document.querySelector(".gallery").innerHTML = html;
+}

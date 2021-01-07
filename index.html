@@ -6,16 +6,19 @@
 			<title>Chatai Gallery</title>
 			<h1 class="titre" style="font-size:2vw;">Bienvenue dans ma gallerie !</h1>
 		</div>
+		<link rel="manifest" href="manifest.webmanifest" />
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="index.css"/>
-		<link rel="manifest" href="manifest.webmanifest">
+		
+
 		<script
       		async
      		src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.9/pwacompat.min.js"
       		integrity="sha384-VcI6S+HIsE80FVM1jgbd6WDFhzKYA0PecD/LcIyMQpT4fMJdijBh0I7Iblaacawc"
       		crossorigin="anonymous"
-    	></script>
+		></script>
+		<script src="./script.js"></script>
         <script src="./sw.js"></script>
         <script type="text/javascript">
         	fetch('https://nicolaswebmobilepwa.netlify.app/');
@@ -25,7 +28,7 @@
    				{
     				console.log("votre service worker a été enregistré!");}).catch((error) => 
     			{
-      				console.error(error);
+      				console.log("error");
     			});
   			} 
   			else 
@@ -41,16 +44,7 @@
 			Installer
 		</div>
 
-		<div class ="gallery">
-
-			<script src="./script.js"></script>
- 
-       		<div class="iconButton" id="bouton" onclick="javascript:viewImage('image');"> <h2 style='font-size:2vw;'>Afficher l'image</h2></div>
-        	<div class="icon" id="image">
-        		<img src='images/ball.png' alt='ball' class='photo'>
-        	</div>
-
-		</div>
+		<div class ="gallery"></div>
 
     </body>
 
