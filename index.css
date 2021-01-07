@@ -67,6 +67,6 @@
 	white-space: nowrap;
   }
 
-.columns{
+.row{
 	flex-direction: row;
 }

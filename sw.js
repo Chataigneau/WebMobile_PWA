@@ -23,7 +23,6 @@ self.addEventListener("fetch", (event) => {
           const formattedResponse = json.map((j) => ({
             name: j.name,
             description: j.description || "",
-            updated_at: j.updated_at,
 			url: j.url
           }));
 

@@ -13,7 +13,7 @@ function afficher(json){
   let html = "";
 
   selections.forEach(selection => {
-    html += '<div class="columns">';
+    html += '<div class="row">';
 
     selection.forEach(repo => {
       html += `
