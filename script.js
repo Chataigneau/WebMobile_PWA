@@ -1,27 +1,3 @@
-var afficher=false;
-
-/*
-var html = `
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<table>
-  <tbody>
-    <tr>
-      <td><img src='images/sonic.png' alt='sonic' class='photo'></td>
-      <td><img src='images/mario.png' alt='mario' class='photo'></td>
-      <td><img src='images/captain.png' alt='captain' class='photo'></td>
-      <td><img src='images/pika.png' alt='pikachu' class='photo'></td>
-      <td><img src='images/falco.png' alt='falco' class='photo'></td>
-    </tr>
-    <tr>
-      <td><p class='characterName' style="font-size:2vw;"/>SONIC</p></td>
-      <td><p class='characterName' style="font-size:2vw;"/>MARIO</p></td>
-      <td><p class='characterName' style="font-size:2vw;"/>CAPTAIN FALCON</p></td>
-      <td><p class='characterName' style="font-size:2vw;"/>PIKACHU</p></td>
-      <td><p class='characterName' style="font-size:2vw;"/>FALCO</p></td>
-    </tr>
-  </tbody>
-</table>`;*/
-
 function reduireArray(array, size) {
   if (array.length <= size) {
     return [array];
@@ -53,15 +29,26 @@ function afficher(json){
               </div>
               <div class="card-content">
                 <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                      <img
+                        src="https://giffiles.alphacoders.com/981/98174.gif"
+                        alt="Placeholder image"
+                      />
+                    </figure>
                   </div>
                   <div class="media-content">
                     <p class="title is-4">${repo.name}</p>
+                    <p class="subtitle is-6">@Parcourir</p>
                   </div>
                 </div>
   
                 <div class="content">
                    ${repo.description}
                   <br />
+                  Dernière mise à jour: <time datetime="${
+                    repo.updated_at
+                  }">${dateTimeFormat.format(new Date(repo.updated_at))}</time>
                 </div>
               </div>
             </div>
@@ -74,21 +61,10 @@ function afficher(json){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  fetch("https://nicolaswebmobilepwa.netlify.app/images.json")
+  fetch("https:/nicolaswebmobilepwa.netlify.app/images.json")
     .then((response) => response.json())
     .then((json) => afficher(json));  
 });
-
-function viewImage(id) {
-
-    var contenuImage=!afficher ? 
-    html : "<img src='images/ball.png' alt='ball' clas='photo'> ";
-    afficher=!afficher;
-    var contenuBouton=afficher ? "<h2 style='font-size:2vw;'>Cacher les icones</h2>" : "<h2 style='font-size:2vw;'>Afficher les icones</h2>" ; 
-     
-    document.getElementById(id).innerHTML=contenuImage;
-    document.getElementById("bouton").innerHTML=contenuBouton;
-}
 
 window.addEventListener('beforeinstallprompt', e => { 
   e.preventDefault() ; 
