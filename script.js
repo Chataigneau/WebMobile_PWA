@@ -31,7 +31,6 @@ function afficher(json){
                 <div class="media">
                   <div class="media-content">
                     <p class="title is-4">${repo.name}</p>
-                    <p class="subtitle is-6">@Parcourir</p>
                   </div>
                 </div>
   

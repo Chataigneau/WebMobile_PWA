@@ -66,3 +66,7 @@
 	font-size: x-large;
 	white-space: nowrap;
   }
+
+.card{
+	flex-direction: row;
+}
