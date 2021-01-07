@@ -17,7 +17,7 @@ function afficher(json){
 
     selection.forEach(repo => {
       html += `
-            <div class="column">
+            <div class="column" style="max-width:100%;height:auto;">
             <div class="card">
               <div class="card-image">
                 <figure class="image is-4by3">
