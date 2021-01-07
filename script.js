@@ -49,3 +49,27 @@ function viewImage(id) {
     document.getElementById(id).innerHTML=contenuImage;
     document.getElementById("bouton").innerHTML=contenuBouton;
 }
+
+window.addEventListener('beforeinstallprompt', e => { 
+  e.preventDefault() ; 
+  deferredPrompt = e ; 
+  const btn = document.getElementById('button') ; 
+ 
+  btn.addEventListener('click', e  =>{ 
+    deferredPrompt.prompt() ; 
+ 
+    deferredPrompt.userChoice 
+      .then((choiceResult) => { 
+         if (choiceResult.outcome === 'accepted') { 
+           console.log('A2HS prompt accepté'); 
+         } else { 
+            console.log('A2HS prompt décliné'); 
+       } 
+    deferredPrompt = null; 
+   }); 
+  }) ; 
+}) ;
+
+window.addEventListener('appinstalled', e => { 
+   console.log('application installée') ; 
+}) ;
