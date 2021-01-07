@@ -17,7 +17,7 @@
   			{
    				navigator.serviceWorker .register("/sw.js") .then((reg) => 
    				{
-    				console.log("votre service worker a étéenregistré!");}).catch((error) => 
+    				console.log("votre service worker a été enregistré!");}).catch((error) => 
     			{
       				console.error(error);
     			});
@@ -31,6 +31,10 @@
 	</head>
 
 	<body class="body">
+		<div id="button" class="button">
+			Installer
+		</div>
+
 		<div class ="gallery">
 
 			<script src="./script.js"></script>
