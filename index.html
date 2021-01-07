@@ -4,15 +4,12 @@
 	<head>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<div class="header">
-			<title>Chatai Gallery</title>
-			<h1 class="titre" style="font-size:2vw;">Bienvenue dans ma gallerie !</h1>
-		</div>
+		<title>Chatai Gallery</title>
+		<h1 class="titre" style="font-size:2vw;">Bienvenue dans ma gallerie !</h1>
 		<link rel="manifest" href="manifest.webmanifest" />
-		
+		<link rel="apple-touch-icon" href="/icon-192x192.png">
         <link rel="stylesheet" href="index.css"/>
 		
-
 		<script
       		async
      		src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.9/pwacompat.min.js"
@@ -21,22 +18,20 @@
 		></script>
 		<script src="./script.js"></script>
         <script src="./sw.js"></script>
-        <script type="text/javascript">
-        	fetch('https://nicolaswebmobilepwa.netlify.app/');
-  			if ('serviceWorker' in navigator) 
-  			{
-   				navigator.serviceWorker .register("/sw.js") .then((reg) => 
-   				{
-    				console.log("votre service worker a été enregistré!");}).catch((error) => 
-    			{
-      				console.log("error");
-    			});
-  			} 
-  			else 
-  			{
-    			console.warn("Service workers are notsupported.");
-  			}
-        </script>
+        <script>
+			if ("serviceWorker" in navigator) {
+			  navigator.serviceWorker
+				.register("/sw.js")
+				.then((reg) => {
+				  console.log("votre service worker a été enregistré!");
+				})
+				.catch((error) => {
+				  console.log("error");
+				});
+			} else {
+			  console.warn("Service workers are not supported.");
+			}
+		  </script>
 
 	</head>
 

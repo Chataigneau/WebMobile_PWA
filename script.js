@@ -22,41 +22,6 @@ var html = `
   </tbody>
 </table>`;*/
 
-function viewImage(id) {
-
-    var contenuImage=!afficher ? 
-    html : "<img src='images/ball.png' alt='ball' clas='photo'> ";
-    afficher=!afficher;
-    var contenuBouton=afficher ? "<h2 style='font-size:2vw;'>Cacher les icones</h2>" : "<h2 style='font-size:2vw;'>Afficher les icones</h2>" ; 
-     
-    document.getElementById(id).innerHTML=contenuImage;
-    document.getElementById("bouton").innerHTML=contenuBouton;
-}
-
-window.addEventListener('beforeinstallprompt', e => { 
-  e.preventDefault() ; 
-  deferredPrompt = e ; 
-  const btn = document.getElementById('button') ; 
- 
-  btn.addEventListener('click', e  =>{ 
-    deferredPrompt.prompt() ; 
- 
-    deferredPrompt.userChoice 
-      .then((choiceResult) => { 
-         if (choiceResult.outcome === 'accepted') { 
-           console.log('A2HS prompt accepté'); 
-         } else { 
-            console.log('A2HS prompt décliné'); 
-       } 
-    deferredPrompt = null; 
-   }); 
-  }) ; 
-}) ;
-
-window.addEventListener('appinstalled', e => { 
-   console.log('application installée') ; 
-}) ;
-
 function reduireArray(array, size) {
   if (array.length <= size) {
     return [array];
@@ -107,3 +72,44 @@ function afficher(json){
 
   document.querySelector(".gallery").innerHTML = html;
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  fetch("https://nicolaswebmobilepwa.netlify.app/images.json")
+    .then((response) => response.json())
+    .then((json) => afficher(json));  
+});
+
+function viewImage(id) {
+
+    var contenuImage=!afficher ? 
+    html : "<img src='images/ball.png' alt='ball' clas='photo'> ";
+    afficher=!afficher;
+    var contenuBouton=afficher ? "<h2 style='font-size:2vw;'>Cacher les icones</h2>" : "<h2 style='font-size:2vw;'>Afficher les icones</h2>" ; 
+     
+    document.getElementById(id).innerHTML=contenuImage;
+    document.getElementById("bouton").innerHTML=contenuBouton;
+}
+
+window.addEventListener('beforeinstallprompt', e => { 
+  e.preventDefault() ; 
+  deferredPrompt = e ; 
+  const btn = document.getElementById('button') ; 
+ 
+  btn.addEventListener('click', e  =>{ 
+    deferredPrompt.prompt() ; 
+ 
+    deferredPrompt.userChoice 
+      .then((choiceResult) => { 
+         if (choiceResult.outcome === 'accepted') { 
+           console.log('A2HS prompt accepté'); 
+         } else { 
+            console.log('A2HS prompt décliné'); 
+       } 
+    deferredPrompt = null; 
+   }); 
+  }) ; 
+}) ;
+
+window.addEventListener('appinstalled', e => { 
+   console.log('application installée') ; 
+}) ;
