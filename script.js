@@ -45,10 +45,6 @@ function afficher(json){
   
                 <div class="content">
                    ${repo.description}
-                  <br />
-                  Dernière mise à jour: <time datetime="${
-                    repo.updated_at
-                  }">${dateTimeFormat.format(new Date(repo.updated_at))}</time>
                 </div>
               </div>
             </div>
