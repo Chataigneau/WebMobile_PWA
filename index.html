@@ -16,7 +16,6 @@
       		integrity="sha384-VcI6S+HIsE80FVM1jgbd6WDFhzKYA0PecD/LcIyMQpT4fMJdijBh0I7Iblaacawc"
       		crossorigin="anonymous"
 		></script>
-		<script src="./script.js"></script>
         <script>
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
@@ -42,12 +41,17 @@
       }
     </script>
 
+    <script src="./script.js"></script>
+
 	</head>
 
 	<body class="body">
-		<div id="button" class="button" style="max-width:100%;height:auto;">
+		<div class="notification is-danger">
+      Vous êtes hors ligne.
+    </div>
+		<button id="button" class="button" style="max-width:100%;height:auto;">
 			Installer
-		</div>
+		</button>
 
 		<div class ="gallery" style="max-width:100%;height:auto;"></div>
 
