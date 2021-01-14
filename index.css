@@ -41,6 +41,11 @@
 	height: auto;
 }
 
+.body {
+	justify-content: center;
+	text-align: center;
+}
+
 .footer {
 	background-color: black;
 	color : white;
@@ -66,6 +71,11 @@
 	text-align: center;
 	white-space: nowrap;
   }
+
+.notification-is-danger {
+	text-align: center;
+	justify-content: center;
+}
 
 .row{
 	flex-direction: row;
