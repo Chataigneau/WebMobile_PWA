@@ -1,34 +1,15 @@
-self.addEventListener("fetch", event => {
-	console.log(event.request.url);
-});
+importScripts("./src/service_worker/install.js"); 
+importScripts("./src/service_worker/activate.js"); 
+importScripts("./src/service_worker/fetch.js"); 
 
-self.addEventListener("fetch", (event) => {
-  const url = event.request.url;
+const cacheName = "galerie-v1";
 
-  if (url.indexOf("https://nicolaswebmobilepwa.netlify.app/images.json") === 0) {
-    event.respondWith(
-      fetch(event.request).then((response) => {
-        if (response.status !== 200) {
-          console.error(
-            "Service Worker",
-            "Error when fetching",
-            event.request.url
-          );
-		  
-          return response;
-        }
-        console.info("Formatting data");
-
-        return response.json().then((json) => {
-          const formattedResponse = json.map((j) => ({
-            name: j.name,
-            description: j.description || "",
-			url: j.url
-          }));
-
-          return new Response(JSON.stringify(formattedResponse));
-        });
-      })
-    );
-  }
-});
+const files = [
+  "/",
+  "/script.js",
+  "images/sonic.png",
+  "images/mario.png",
+  "images/captain.png",
+  "images/pika.png",
+  "images/falco.png"
+];

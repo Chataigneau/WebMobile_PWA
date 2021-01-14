@@ -17,21 +17,30 @@
       		crossorigin="anonymous"
 		></script>
 		<script src="./script.js"></script>
-        <script src="./sw.js"></script>
         <script>
-			if ("serviceWorker" in navigator) {
-			  navigator.serviceWorker
-				.register("/sw.js")
-				.then((reg) => {
-				  console.log("votre service worker a été enregistré!");
-				})
-				.catch((error) => {
-				  console.log("error");
-				});
-			} else {
-			  console.warn("Service workers are not supported.");
-			}
-		  </script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/sw.js",{updateViaCache: 'none'})
+          .then((reg) => {
+            console.log("Votre service worker a été enregistré!");
+			reg.addEventListener('updatefound', () => { 
+				const installing = reg.installing;
+				installing.addEventListener('statechange', () => { 
+				if(installing.state === 'installed'){ 
+					 // Afficher un message aux utilisateurs 
+					 console.log("Votre service worker a été mis à jour! Veuillez rafraîchir la page"); 
+				} 
+			}); 
+			});
+		  
+		  })
+          .catch((error) => {
+            console.error(error);
+          });
+      } else {
+        console.warn("Service workers are not supported.");
+      }
+    </script>
 
 	</head>
 
