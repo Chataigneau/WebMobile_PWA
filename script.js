@@ -72,3 +72,20 @@ window.addEventListener('beforeinstallprompt', e => {
 window.addEventListener('appinstalled', e => { 
    console.log('application installée') ; 
 }) ;
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (navigator.onLine) {
+    document.querySelector(".notification").setAttribute("hidden", "");
+  }
+
+  window.addEventListener("online", () => {
+    document.querySelector(".notification").setAttribute("hidden", "");
+  });
+  window.addEventListener("offline", () => {
+    document.querySelector(".notification").removeAttribute("hidden");
+  });
+
+  fetch("https://nicolaswebmobilepwa.netlify.app/images.json")
+    .then((response) => response.json())
+    .then((json) => afficher(json));  
+});
