@@ -7,9 +7,9 @@ const cacheName = "galerie-v1";
 const files = [
   "/",
   "/script.js",
-  "images/sonic.png",
-  "images/mario.png",
-  "images/captain.png",
-  "images/pika.png",
-  "images/falco.png"
+  "https://nicolaswebmobilepwa.netlify.app/images/sonic.png",
+  "https://nicolaswebmobilepwa.netlify.app/images/mario.png",
+  "https://nicolaswebmobilepwa.netlify.app/images/captain.png",
+  "https://nicolaswebmobilepwa.netlify.app/images/pika.png",
+  "https://nicolaswebmobilepwa.netlify.app/images/falco.png"
 ];
